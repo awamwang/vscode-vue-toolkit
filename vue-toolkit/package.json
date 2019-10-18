@@ -11,47 +11,56 @@
   ],
   "activationEvents": [
     "onCommand:extension.helloWorld",
-		"onCommand:ext.baba",
-		"onLanguage:json",
-		"onLanguage:javascript"
+    "onCommand:ext.baba",
+    "onLanguage:json",
+    "onLanguage:javascript"
   ],
   "main": "./src/extension.js",
   "contributes": {
     "commands": [
-    {
-      "command": "extension.helloWorld",
-      "title": "Hello World"
-    },
-    {
-      "command": "ext.baba",
-      "title": "baba-title"
-    }],
-    "keybindings": [
-    {
-      "command": "extension.helloWorld",
-      "key": "ctrl+f10",
-      "mac": "cmd+f10",
-      "when": "editorTextFocus"
-    }],
-    "menus": {
-      "editor/context": [{
-        "when": "editorFocus",
+      {
         "command": "extension.helloWorld",
-        "group": "navigation"
-      }, {
-        "when": "editorFocus",
+        "title": "Hello World"
+      },
+      {
         "command": "ext.baba",
-        "group": "navigation"
-      }],
-      "explorer/context": [{
-        "command": "ext.baba",
-        "group": "navigation"
-			}],
-			"editor/title/context": [{
-				"when": "resourceLangId == javascript",
-				"command": "ext.baba",
-				"alt": "extension.helloWorld"
-			}]
+        "title": "baba-title"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "extension.helloWorld",
+        "key": "ctrl+f10",
+        "mac": "cmd+f10",
+        "when": "editorTextFocus"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "editorFocus",
+          "command": "extension.helloWorld",
+          "group": "navigation"
+        },
+        {
+          "when": "editorFocus",
+          "command": "ext.baba",
+          "group": "navigation"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "ext.baba",
+          "group": "navigation"
+        }
+      ],
+      "editor/title/context": [
+        {
+          "when": "resourceLangId == javascript",
+          "command": "ext.baba",
+          "alt": "extension.helloWorld"
+        }
+      ]
     },
     "views": {}
   },
