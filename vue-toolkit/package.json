@@ -1,0 +1,72 @@
+{
+  "name": "vue-toolkit",
+  "displayName": "vue-toolkit",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.36.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.helloWorld",
+		"onCommand:ext.baba",
+		"onLanguage:json",
+		"onLanguage:javascript"
+  ],
+  "main": "./src/extension.js",
+  "contributes": {
+    "commands": [
+    {
+      "command": "extension.helloWorld",
+      "title": "Hello World"
+    },
+    {
+      "command": "ext.baba",
+      "title": "baba-title"
+    }],
+    "keybindings": [
+    {
+      "command": "extension.helloWorld",
+      "key": "ctrl+f10",
+      "mac": "cmd+f10",
+      "when": "editorTextFocus"
+    }],
+    "menus": {
+      "editor/context": [{
+        "when": "editorFocus",
+        "command": "extension.helloWorld",
+        "group": "navigation"
+      }, {
+        "when": "editorFocus",
+        "command": "ext.baba",
+        "group": "navigation"
+      }],
+      "explorer/context": [{
+        "command": "ext.baba",
+        "group": "navigation"
+			}],
+			"editor/title/context": [{
+				"when": "resourceLangId == javascript",
+				"command": "ext.baba",
+				"alt": "extension.helloWorld"
+			}]
+    },
+    "views": {}
+  },
+  "scripts": {
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.1",
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^10.12.21",
+    "@types/vscode": "^1.36.0",
+    "eslint": "^5.13.0",
+    "glob": "^7.1.4",
+    "mocha": "^6.1.4",
+    "typescript": "^3.3.1",
+    "vscode-test": "^1.0.2"
+  }
+}
